@@ -1,13 +1,10 @@
 import React from "react";
 
-//será utilizada class pq serão haverá states para capturar o comportamento do usuario
 class SearchBar extends React.Component {
   state = { term: "" };
 
   onFormSubmit = (event) => {
-    //impede a pagina de ser atualizada ao apertar enter (comportamento padrão)
     event.preventDefault();
-    //prop vinda de App.js (a func q será invocada esta em App.jsx)
     this.props.onSubmit(this.state.term);
   };
   render() {
